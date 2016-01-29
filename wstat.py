@@ -19,16 +19,18 @@ def main():
     text = ''
 
     # Open text input.
-    if len(sys.argv) > 1:
-        for filename in sys.argv[1:-1]:
-            with open(filename) as txt_file:
-                text += txt_file.read().lstrip()
-    else:
-        print("Please add some input files on the command line.")
-        exit(1)
+    try:
+        if len(sys.argv) > 1:
+            for filename in sys.argv[1:]:
+                with open(filename) as txt_file:
+                    text += txt_file.read().lstrip()
+        else:
+            exit("Please add some input files on the command line.")
+    except IOError:
+            exit('Error reading input file.')
 
     # Isolate tokens and run through them.
-    for word in re.findall(r'[\w\']+\n?|\.\n?|\,\n?|!\n?|\?\n?', text):
+    for word in re.findall(r'[\w\']+[-\w+]*\n?|\.\n?|\,\n?|!\n?|\?\n?', text):
         if word is not None:
             # Get rid of some characters that mostly messes things up.
             word = word.lower().strip('"()* ')
