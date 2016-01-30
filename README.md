@@ -65,82 +65,82 @@ Output examples.
 
 **Welcome to the world**
 
-Welcome to the world
-Welcome to the baby,
-You gotta have
-Let him loose, chi child
-
-Yourself
-Deafen me
-Absolute
-
-Welcome to the world
-Welcome to the funhouse
-
-Away our heads
-Mouth
-Saviour machine
-Work's down
-Is the possibilities it
+	Welcome to the world
+	Welcome to the baby,
+	You gotta have
+	Let him loose, chi child
+	
+	Yourself
+	Deafen me
+	Absolute
+	
+	Welcome to the world
+	Welcome to the funhouse
+	
+	Away our heads
+	Mouth
+	Saviour machine
+	Work's down
+	Is the possibilities it
 
 
 **Welcome to the world**
 
-Welcome to the world
-Welcome to the dreamers
-
-And your window
-All is a suffragette city
-
-Spring went
-Shopsdown
-
-Welcome to the world
-Welcome to the wagon
-
-It's only dancing
-Destruction as the dames
-Leisure
-The way into gloom
+	Welcome to the world
+	Welcome to the dreamers
+	
+	And your window
+	All is a suffragette city
+	
+	Spring went
+	Shopsdown
+	
+	Welcome to the world
+	Welcome to the wagon
+	
+	It's only dancing
+	Destruction as the dames
+	Leisure
+	The way into gloom
 
 
 **Falling in**
 
-Dredging the pain, in vain sheets on refugees changed
-Say he pinned you, might have to touch the bushland over now we
-Tip get papa chains
-Beggar's face show respect even i am
-Daydreams made of hit him right on garbo's
-
-Sailor who would they don't grab that
-Fingerprints will come quick on high
-Vain showbiz anyway beautiful baby baby got, Moon
-Knowing right from day falling in you sleep!
-
-Sweeping over stiles woman, now tomorrow calls me to the
-Nightclubbing we're gonna pay, and
-Loneliness in town crazies with name york's,
-Reelin' like daisies, lie behind my day after today
-Romantic as forever i'm glad i've
-
-Sailor who would they don't grab that
-Fingerprints will come quick on high
-Vain showbiz anyway beautiful baby baby got,Moon
-Knowing right from day falling in you sleep!
-
-Devil breaking!
-Yards at!
-Utter destruction!
+	Dredging the pain, in vain sheets on refugees changed
+	Say he pinned you, might have to touch the bushland over now we
+	Tip get papa chains
+	Beggar's face show respect even i am
+	Daydreams made of hit him right on garbo's
+	
+	Sailor who would they don't grab that
+	Fingerprints will come quick on high
+	Vain showbiz anyway beautiful baby baby got, Moon
+	Knowing right from day falling in you sleep!
+	
+	Sweeping over stiles woman, now tomorrow calls me to the
+	Nightclubbing we're gonna pay, and
+	Loneliness in town crazies with name york's,
+	Reelin' like daisies, lie behind my day after today
+	Romantic as forever i'm glad i've
+	
+	Sailor who would they don't grab that
+	Fingerprints will come quick on high
+	Vain showbiz anyway beautiful baby baby got,Moon
+	Knowing right from day falling in you sleep!
+	
+	Devil breaking!
+	Yards at!
+	Utter destruction!
 
 
 **Good again for**
 
-Enemy dropped a god-awful small enough to her
-Threading daisies lie low with their eyes
-Flipping time in a look into the flame filled sunset
-Bullshit from my head up there was so enticing to face, frightening, do-doh
-Elvis is my god
-Wanking to their whiskey voice croaked
-Dot marks
+	Enemy dropped a god-awful small enough to her
+	Threading daisies lie low with their eyes
+	Flipping time in a look into the flame filled sunset
+	Bullshit from my head up there was so enticing to face, frightening, do-doh
+	Elvis is my god
+	Wanking to their whiskey voice croaked
+	Dot marks
 
 
