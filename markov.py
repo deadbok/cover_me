@@ -6,10 +6,13 @@ Use Markov chains and templates to generate "poetry"
 :license: GPLv3, see LICENSE for more details.
 """
 import re
-import sys
 import json
 import random
+import argparse
 from collections import OrderedDict
+
+
+__version__ = '0.0.4'
 
 
 def prepare_word(text, word, newline):
@@ -154,26 +157,31 @@ def main():
     Create a dictionary of word associations for later use in a markov
     generator and save it as a file.
     """
-    print('')
+    # Parse command line
+    arg_parser = argparse.ArgumentParser()
+    arg_parser.add_argument('-v', '--verbose',
+                            action='store_true', dest='verbose', default=False,
+                            help='Be verbose.')
+    arg_parser.add_argument('-o', '--output', type=argparse.FileType('w'),
+                            dest='outfile', default=None,
+                            help='Write output to a this file.')
+    arg_parser.add_argument('-t', '--template', type=argparse.FileType('r'),
+                            dest='tpl_file', default=None,
+                            help='Use this file as template.')
+    arg_parser.add_argument('corpusfile', type=argparse.FileType('r'),
+                            help='Text file to process.')
+    args = arg_parser.parse_args()
+
     random.seed()
     # Load JSON Markov seed corpus.
-    with open("words.json") as corpus_file:
-        corpus = json.load(corpus_file)
+    corpus = json.load(args.corpusfile)
 
-    if len(sys.argv) > 1:
+    if args.tpl_file is not None:
         # Load a template file.
-        with open(sys.argv[1]) as tpl_file:
-            template = tpl_file.read()
+        template = args.tpl_file.read()
     else:
-        # Default to creating 3 word title and 200 words Markov".
-        template = "**{.!3}**\n\n{.50}\n"
-
-    if len(sys.argv) > 2:
-        # Load a text file of words to use with the Markov seed corpus.
-        with open(sys.argv[2]) as word_file:
-            words = word_file.read().split()
-    else:
-        words = None
+        # Default to creating 3 word title and 150 words Markov.
+        template = '**{.!3}**\n\n{.50}\n'
 
     text = ''
     blocks = list()
@@ -202,6 +210,8 @@ def main():
 
             # Reference or new Markov string?
             if value > 0:
+                if args.verbose:
+                    print('Generating ' + str(value) + ' words.')
                 # Keep a list of generated block.
                 # Insert Markov string.
                 blocks.append(markov_gen(last_word, newline, value, corpus))
@@ -210,13 +220,19 @@ def main():
                 # Insert previous string.
                 value = abs(value)
                 if value > len(blocks):
-                    exit("Reference to unknown block: " + str(value) + ".")
+                    exit('Reference to unknown block: ' + str(value) + '.')
                 blocks.append(blocks[value - 1])
                 text = add_string(text, blocks[-1], capitalize)
         else:
             text += tpl_token
 
-    print(text)
+    if (args.verbose) and (args.outfile is None):
+        print()
+
+    if args.outfile is None:
+        print(text)
+    else:
+        args.outfile.write(text)
 
 if __name__ == '__main__':
     main()

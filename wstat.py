@@ -5,7 +5,6 @@ Save word association statistics as JSON data
 :copyright: (c) 2016 by Martin Grønholdt.
 :license: GPLv3, see LICENSE for more details.
 """
-import sys
 import json
 import re
 import argparse
