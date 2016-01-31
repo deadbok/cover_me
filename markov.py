@@ -1,6 +1,9 @@
 #!/usr/bin/env python3
 """
-Save word association statistics as JSON data
+Use Markov chains and templates to generate "poetry"
+
+:copyright: (c) 2016 by Martin Grønholdt.
+:license: GPLv3, see LICENSE for more details.
 """
 import re
 import sys
@@ -182,7 +185,7 @@ def main():
         # Not a template command token.
         if '{' in tpl_token:
             # Allow newlines?
-            if tpl_token[1] == '!':
+            if '!' in tpl_token:
                 newline = False
             else:
                 newline = True
