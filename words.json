@@ -179,7 +179,7 @@
         "5th": 1,
         "7": 2,
         "8th\n": 1,
-        "a": 38,
+        "a": 37,
         "achtung": 1,
         "act": 1,
         "after": 8,
@@ -1089,8 +1089,6 @@
     },
     "?": {
         ".": 1,
-        "?": 5,
-        "?\n": 2,
         "and": 1,
         "any": 1,
         "at": 1,
@@ -1117,7 +1115,7 @@
         "power": 2,
         "remind": 2,
         "take": 2,
-        "the": 3,
+        "the": 2,
         "their": 1,
         "to": 2,
         "tres": 1,
@@ -1128,12 +1126,11 @@
         "will": 1,
         "wuhh": 1,
         "yeah": 1,
-        "you": 4
+        "you": 3
     },
     "a": {
         ",": 3,
         ".": 12,
-        "?": 1,
         "baby": 1,
         "baby\n": 3,
         "backstreet": 2,
@@ -1576,7 +1573,7 @@
         "pornstar": 1,
         "portrait": 2,
         "post": 1,
-        "pound\n": 2,
+        "pound\n": 1,
         "present\n": 1,
         "pretty": 4,
         "price\n": 1,
@@ -1977,9 +1974,6 @@
     },
     "actions": {
         "were": 1
-    },
-    "actually": {
-        "written": 1
     },
     "addictions": {
         "and": 1
@@ -3150,7 +3144,7 @@
         "sudden": 1,
         "sweeter": 1,
         "time": 1,
-        "wonder": 5
+        "wonder": 4
     },
     "anybody": {
         "else": 2
@@ -6253,7 +6247,6 @@
         "are": 3
     },
     "choking": {
-        "luther": 1,
         "on": 1
     },
     "choo": {
@@ -10291,7 +10284,7 @@
         "you": 2
     },
     "forced": {
-        "your": 2
+        "your": 1
     },
     "foreign": {
         "rain": 1,
@@ -11692,14 +11685,14 @@
         "oh": 1
     },
     "guy": {
-        ",": 1,
         "around\n": 1,
         "i'm": 1,
         "that": 1,
         "that's": 1,
         "wept": 1,
         "who": 2,
-        "without": 2
+        "without": 2,
+        "you": 1
     },
     "guys": {
         ",": 2,
@@ -12754,8 +12747,7 @@
         "tree\n": 1
     },
     "highways": {
-        "and": 1,
-        "redeeming": 1
+        "and": 1
     },
     "hill": {
         ",": 2,
@@ -15673,9 +15665,6 @@
     "landscape": {
         "is": 1
     },
-    "large": {
-        "mindless": 1
-    },
     "lasers": {
         "an'": 1
     },
@@ -16964,7 +16953,7 @@
     },
     "luther": {
         "king": 2,
-        "king\n": 2
+        "king\n": 1
     },
     "lying": {
         ",": 1,
@@ -17045,7 +17034,7 @@
         "on": 1
     },
     "maggot": {
-        "glare\n": 2
+        "glare\n": 1
     },
     "magic": {
         ",": 37,
@@ -17885,7 +17874,7 @@
         "pavilion\n": 1
     },
     "mindless": {
-        "maggot": 2
+        "maggot": 1
     },
     "minds": {
         "are": 2,
@@ -18298,7 +18287,6 @@
     },
     "movies": {
         "came": 1,
-        "forced": 1,
         "in": 4
     },
     "movin'": {
@@ -19660,7 +19648,6 @@
     "of": {
         "'ludes\n": 1,
         "1984\n": 5,
-        "?": 1,
         "a": 26,
         "a\n": 1,
         "age\n": 2,
@@ -20283,7 +20270,7 @@
         "ooh": 1,
         "our": 3,
         "out\n": 18,
-        "pain\n": 3,
+        "pain\n": 2,
         "past\n": 1,
         "people": 2,
         "platforms": 1,
@@ -20851,7 +20838,8 @@
         "loud": 4,
         "loud\n": 1,
         "my": 2,
-        "of": 54,
+        "of": 53,
+        "of\n": 1,
         "on": 8,
         "one": 1,
         "over": 2,
@@ -22705,7 +22693,7 @@
         "wine\n": 1
     },
     "redeeming": {
-        "spiritual": 2
+        "spiritual": 1
     },
     "redemption": {
         "from": 1
@@ -25890,7 +25878,7 @@
         "rose": 2
     },
     "spiritual": {
-        "qualities\n": 2
+        "qualities\n": 1
     },
     "spit": {
         "and": 1,
@@ -26255,7 +26243,7 @@
     },
     "sterile": {
         "skyscrapers\n": 1,
-        "world\n": 2
+        "world\n": 1
     },
     "steven": {
         "plays": 1
@@ -30704,7 +30692,7 @@
         "with": 1
     },
     "tried": {
-        "a": 2,
+        "a": 1,
         "all": 1,
         "digging": 1,
         "so": 4,
@@ -32615,7 +32603,7 @@
         "will": 1,
         "you": 25,
         "you're": 15,
-        "you've": 3,
+        "you've": 2,
         "your": 5
     },
     "where": {
@@ -33356,7 +33344,7 @@
         "sometimes\n": 3,
         "then": 1,
         "then\n": 4,
-        "when": 2,
+        "when": 1,
         "where": 5,
         "where\n": 1,
         "why": 1,
@@ -33475,7 +33463,6 @@
         "just": 1,
         "of": 3,
         "population": 1,
-        "sterile": 1,
         "through": 1,
         "to": 4,
         "was": 2,
@@ -33605,7 +33592,7 @@
     },
     "written": {
         "in": 2,
-        "on": 2
+        "on": 1
     },
     "wrong": {
         ",": 2,
@@ -34304,7 +34291,7 @@
         "still": 1,
         "told": 2,
         "torn": 3,
-        "tried": 3,
+        "tried": 2,
         "watched": 1
     },
     "young": {
@@ -34477,7 +34464,7 @@
         "man\n": 2,
         "marbled": 1,
         "mask": 1,
-        "memories\n": 2,
+        "memories\n": 1,
         "memory\n": 4,
         "messiah\n": 3,
         "mile\n": 1,

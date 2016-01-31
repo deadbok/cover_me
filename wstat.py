@@ -5,6 +5,10 @@ Save word association statistics as JSON data
 import sys
 import json
 import re
+import argparse
+
+
+__version__ = '0.0.4'
 
 
 def main():
@@ -12,22 +16,28 @@ def main():
     Create a dictionary of word associations for later use in a markov
     generator and save it as a file.
     """
+    # Parse command line
+    arg_parser = argparse.ArgumentParser()
+    arg_parser.add_argument("-o", "--output", type=argparse.FileType('w'),
+                            dest="outfile", default=None,
+                            help="Write output to a this file.")
+    arg_parser.add_argument("-v", "--verbose",
+                            action="store_true", dest="verbose", default=False,
+                            help="Be verbose.")
+    arg_parser.add_argument("corpusfile", type=argparse.FileType('r'),
+                            help="Text file to process.")
+    args = arg_parser.parse_args()
     n_words = 0
     n_lines = 0
     words = dict()
     prev = None
     text = ''
 
-    # Open text input.
-    try:
-        if len(sys.argv) > 1:
-            for filename in sys.argv[1:]:
-                with open(filename) as txt_file:
-                    text += txt_file.read().lstrip()
-        else:
-            exit("Please add some input files on the command line.")
-    except IOError:
-            exit('Error reading input file.')
+    if args.corpusfile is None:
+        exit('Error reading input file.')
+
+    # Read text input.
+    text += args.corpusfile.read().lstrip()
 
     # Isolate tokens and run through them.
     for word in re.findall(r'[\w\']+[-\w+]*\n?|\.\n?|\,\n?|!\n?|\?\n?', text):
@@ -53,7 +63,8 @@ def main():
                         # Don't link to last word of previous line.
                         prev = None
                         n_lines += 1
-                        print('.', end='')
+                        if args.verbose:
+                            print('.', end='')
                     else:
                         # No new line, just save the current word.
                         prev = word
@@ -61,14 +72,17 @@ def main():
                     # No previous word use current.
                     prev = word
 
-    print('\n')
     # Save as JSON.
-    with open("words.json", mode="w") as word_file:
-        json.dump(words, word_file, ensure_ascii=False, indent=4,
+    if args.outfile is not None:
+        json.dump(words, args.outfile, ensure_ascii=False, indent=4,
                   sort_keys=True)
+    else:
+        print(json.dumps(words, ensure_ascii=False, indent=4,
+                         sort_keys=True))
 
-    print("Total lines found: " + str(n_lines))
-    print("Total words found: " + str(n_words))
+    if args.verbose:
+        print("Total lines found: " + str(n_lines))
+        print("Total words found: " + str(n_words))
 
 if __name__ == '__main__':
     main()
