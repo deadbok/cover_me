@@ -80,7 +80,7 @@ Command syntax:
  * ``{!n}``: Same as above, but newlines are not allowed.
  * ``{.n}``: Use the Markov generator to insert ``n`` words, capitalise first letter.
  * ``{-n}``: Copy a Markov generated block ``n`` from the top.
-   
+ * ``{rl,w}``: Rhyme on word on line l, word w.
 
 Output examples.
 ----------------

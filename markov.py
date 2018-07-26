@@ -9,10 +9,11 @@ import re
 import json
 import random
 import argparse
+import pronouncing
 from collections import OrderedDict
 
 
-__version__ = '0.0.4'
+__version__ = '0.1.0'
 
 
 def prepare_word(text, word, newline):
@@ -169,7 +170,7 @@ def main():
                             dest='tpl_file', default=None,
                             help='Use this file as template.')
     arg_parser.add_argument('corpusfile', type=argparse.FileType('r'),
-                            help='Text file to process.')
+                            help='Text corpus processed by wstat.py.')
     args = arg_parser.parse_args()
 
     random.seed()
@@ -181,13 +182,22 @@ def main():
         template = args.tpl_file.read()
     else:
         # Default to creating 3 word title and 150 words Markov.
-        template = '**{.!3}**\n\n{.50}\n'
+        template = '**{.!3}**\n\n{.5}\n{.3}\n{.5} {r3,5}'
 
     text = ''
     blocks = list()
     newline = False
     last_word = None
     capitalize = False
+    corpus_words = []
+
+    for cword, cwords in corpus.items():
+        corpus_words.append(cword)
+        for cword in cwords.keys():
+            corpus_words.append(cword)
+
+    if args.verbose:
+        print("{} words in corpus.".format(len(corpus_words)))
 
     for tpl_token in re.split(r'({[^}]+})', template):
         # Not a template command token.
@@ -203,26 +213,55 @@ def main():
             else:
                 capitalize = False
 
-            # Get last word for the Markov generator.
-            last_word = get_last_word(text)
-            # Convert the numerical part of the token.
-            value = int(tpl_token.strip('{}!.'))
-
-            # Reference or new Markov string?
-            if value > 0:
+            if 'r' in tpl_token:
+                # Rhyme on previous word.
+                line, word = tpl_token.strip('{}!.r').split(',')
+                line = int(line)
+                word = int(word)
+                lines = text.split('\n')
+                words = lines[line - 1].split(' ')
+                if len(words) < word:
+                    word = words[-1]
+                else:
+                    word = words[word - 1]
+                word = word.strip('.,')
                 if args.verbose:
-                    print('Generating ' + str(value) + ' words.')
-                # Keep a list of generated block.
-                # Insert Markov string.
-                blocks.append(markov_gen(last_word, newline, value, corpus))
-                text = add_string(text, blocks[-1], capitalize)
+                    print('Rhyming on ' + str(word) + ': ' , end='')
+
+                rhyme = pronouncing.rhymes(word)
+
+                rhyme = list(set(rhyme).intersection(corpus_words))
+
+                if len(rhyme) == 0:
+                    rhyme = word
+                else:
+                    rhyme = random.choice(rhyme)
+                print(rhyme)
+
+                text = add_string(text, rhyme, capitalize)
+
             else:
-                # Insert previous string.
-                value = abs(value)
-                if value > len(blocks):
-                    exit('Reference to unknown block: ' + str(value) + '.')
-                blocks.append(blocks[value - 1])
-                text = add_string(text, blocks[-1], capitalize)
+                # Get last word for the Markov generator.
+                last_word = get_last_word(text)
+                # Convert the numerical part of the token.
+                value = int(tpl_token.strip('{}!.'))
+
+                # Reference or new Markov string?
+                if value > 0:
+                    if args.verbose:
+                        print('Generating ' + str(value) + ' words.')
+                    # Keep a list of generated block.
+                    # Insert Markov string.
+                    blocks.append(markov_gen(
+                        last_word, newline, value, corpus))
+                    text = add_string(text, blocks[-1], capitalize)
+                else:
+                    # Insert previous string.
+                    value = abs(value)
+                    if value > len(blocks):
+                        exit('Reference to unknown block: ' + str(value) + '.')
+                    blocks.append(blocks[value - 1])
+                    text = add_string(text, blocks[-1], capitalize)
         else:
             text += tpl_token
 
@@ -233,6 +272,7 @@ def main():
         print(text)
     else:
         args.outfile.write(text)
+
 
 if __name__ == '__main__':
     main()
